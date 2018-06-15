@@ -1,0 +1,40 @@
+body{
+	background-color: #aed6f1;
+}
+
+p{
+	margin-top: 10px;
+}
+
+h1{
+	margin: 0;
+	color:  #154360;
+}
+
+h2{
+	margin-bottom: 5px;
+}
+
+code{
+	background-color: lightgrey;
+	display: block;
+	padding: 5px;
+	border: 1px solid #999;
+	border-left: 5px solid #999;
+	margin-right: 40%;
+}
+
+.content{
+	margin: 50px;
+}
+
+.codediv{
+ 	border:solid gray;
+	border-width:.1em .1em .1em .3em;
+	padding:.2em .6em;  
+	overflow: auto;
+	width: auto;
+	background: #eee;
+	font-family: courier;
+}
+
