@@ -1,3 +1,7 @@
+header{
+	border-bottom: solid black;
+	font-family: 'Menlo';
+}
 body{
 	background-color: #aed6f1;
 }
@@ -35,6 +39,6 @@ code{
 	overflow: auto;
 	width: auto;
 	background: #eee;
-	font-family: courier;
+	font-family: 'Inconsolata', monospace;
 }
 
