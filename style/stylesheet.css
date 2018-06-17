@@ -1,9 +1,11 @@
-header{
-	border-bottom: solid black;
-	font-family: 'Menlo';
+html{
+	background-color: #154360;
 }
 body{
 	background-color: #aed6f1;
+	border-radius: 20px;
+	padding: 15px;
+	border: solid black;
 }
 
 p{
@@ -13,10 +15,16 @@ p{
 h1{
 	margin: 0;
 	color:  #154360;
+	font-family: arial;
 }
 
 h2{
 	margin-bottom: 5px;
+}
+
+h5{
+	margin: 0;
+	border-bottom: solid black;	
 }
 
 code{
@@ -25,11 +33,33 @@ code{
 	padding: 5px;
 	border: 1px solid #999;
 	border-left: 5px solid #999;
-	margin-right: 40%;
+}
+
+pre{
+	font-family: 'Inconsolata', monospace;
 }
 
 .content{
-	margin: 50px;
+	margin-top: 30px;
+}
+
+.comment{
+	color: grey;
+}
+.codegreen{
+	color: #008800;
+}
+
+.codepink{
+	color: #BB0066;
+}
+
+.codeblue{
+	color: #0066BB;
+}
+
+.codestring{
+	color: #ef8b32;
 }
 
 .codediv{

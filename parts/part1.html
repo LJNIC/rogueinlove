@@ -11,8 +11,10 @@
 </head>
 
 <body>
+
 	<header>
-	<p><h1>A Roguelike in LÖVE</h1> Part 1: Our hero emerges</p>
+	<h1>A Roguelike in LÖVE</h1> 
+	<h5>Part 1: Our hero emerges</h5>
 	</header>
 
 	<div class="content">
@@ -20,9 +22,9 @@
 	<p> First: Getting LOVE installed. There is a guide for that at <a href="https://love2d.org">its wiki</a>.
 	Once you've got it working, create a directory for your game. Follow the wiki's "Making a Game" section and 
 	make sure it prints to the screen properly. Next, we will be using the fantastic 
-	<a href="https://github.com/paulofmandown/rotLove"> rotLove </a> library for 
+	<a href="https://github.com/paulofmandown/rotLove"> rotLove</a> library for 
 	various parts of the game, including our display. I have made some slight modifications to it that allow us
-	to use our own tileset. You can download it <a href="https://github.com/LJNIC/rotLove/archive/master.zip"> here </a>
+	to use our own tileset. You can download it <a href="https://github.com/LJNIC/rotLove/archive/master.zip"> here</a>
 	or use git:
 	</p>
 	<div class="codediv">
@@ -32,23 +34,34 @@
 	lib. If you haven't already, open up a file in your text editor of choice and call it "main.lua". This is where all LOVE games
 	begin. Our code will start off like this:
 	</p>
-	<!-- HTML generated using hilite.me --><div class="codediv"><table><tr><td><pre style="margin: 0; line-height: 125%">1
+	<div class="codediv"><table><tr><td><pre style="margin: 0; line-height: 125%">1
 2
 3
 4
-5</pre></td><td><pre style="margin: 0; line-height: 125%">ROT <span style="color: #333333">=</span> <span style="color: #007020">require</span> <span style="background-color: #fff0f0">&quot;lib/src/rot&quot;</span>
+5
+6
+7
+8
+9
+10</pre></td><td><pre style="margin: 0; line-height: 125%">ROT <span style="color: #333333">=</span> <span style="color: #007020">require</span> <span class="codestring">&quot;lib/src/rot&quot;</span>
+SCREEN_H = 45
+SCREEN_W = 75
+FORE_COLOR = ROT.Color.fromString(<span class="codestring">&quot;white&quot;</span>)
+BACK_COLOR = ROT.Color.fromString(<span class="codestring">&quot;black&quot;</span>)
 
-<span style="color: #008800; font-weight: bold">function</span> <span style="color: #BB0066; font-weight: bold">love</span>.<span style="color: #0066BB; font-weight: bold">load</span>()
-    display <span style="color: #333333">=</span> ROT.Display:new()
-<span style="color: #008800; font-weight: bold">end</span>
+<span class="codegreen">function</span> <span class="codepink">love</span>.<span class="codeblue">load</span>()
+<span class="comment">    --rotLove's display object accepts an integer width, height, a float scale, and a LOVE color for foreground and background</span>
+    display <span style="color: #333333">=</span> ROT.Display:new(SCREEN_W, SCREEN_H, 1, FORE_COLOR, BACK_COLOR)
+<span class="codegreen">end</span>
 </pre></td></tr></table></div>
 
-	<pre><code>ROT = require 'lib/src/rot'
-
-love.load()
-	display = ROT.Display:new()
-end	</code></pre>
-	<p>The function <span class="love">love.load()</span> is the first function called by LOVE, besides <span class="love">love.run()</span>, but
-	we won't be modifying it. See <a href="https://love2d.org/wiki/love.run">here</a> for more.
+<p> We start by loading the rotLove module into our game. Then we create constants for the screen height and width 
+	(in tiles, not pixels), and the foreground and background. rotLove's color module can also create colors from a
+	hex code ('#ffffff').
+	The function <span class="codepink">love</span>.<span class="codeblue">load</span>() is the first 
+	function called by LOVE, besides <span class="codepink">love</span>.<span class="codeblue">run()</span>, but
+	we won't be modifying it. See <a href="https://love2d.org/wiki/love.run">here</a> if you're interested. Finally,
+	we create a display object.
+</p>
 	</div>
 </body>
