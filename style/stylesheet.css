@@ -24,7 +24,6 @@ h2{
 
 h5{
 	margin: 0;
-	border-bottom: solid black;	
 }
 
 code{
@@ -37,6 +36,13 @@ code{
 
 pre{
 	font-family: 'Inconsolata', monospace;
+}
+
+.flex-header{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: solid black;
 }
 
 .content{
