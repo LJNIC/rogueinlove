@@ -1,6 +1,7 @@
 html{
 	background-color: #154360;
 }
+
 body{
 	background-color: #aed6f1;
 	border-radius: 20px;
@@ -36,6 +37,10 @@ code{
 
 pre{
 	font-family: 'Inconsolata', monospace;
+}
+
+.github{
+	width: 50px;
 }
 
 .flex-header{
