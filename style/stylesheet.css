@@ -6,7 +6,11 @@ body{
 	background-color: #aed6f1;
 	border-radius: 20px;
 	padding: 15px;
-	border: solid black;
+	border: solid white;
+}
+
+a{
+	text-decoration: none;
 }
 
 p{
@@ -39,6 +43,15 @@ pre{
 	font-family: 'Inconsolata', monospace;
 }
 
+button{
+	cursor: pointer;
+	border-radius: 28px;
+	border: solid gray;
+	border-width: 1px;
+	font-size: 25px;
+	padding: 2px;
+}
+
 .github{
 	width: 50px;
 }
@@ -51,9 +64,7 @@ pre{
 }
 
 .content{
-	margin-top: 30px;
 }
-
 .comment{
 	color: grey;
 }
@@ -81,5 +92,14 @@ pre{
 	width: auto;
 	background: #eee;
 	font-family: 'Inconsolata', monospace;
+	font-size: 13px;
 }
 
+.flex-nav{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 45%;
+	padding-right: 45%;
+	padding-top: 10px;
+}
