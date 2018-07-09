@@ -1,3 +1,4 @@
+/* Global Options */
 html{
 	background-color: #154360;
 }
@@ -31,31 +32,7 @@ h5{
 	margin: 0;
 }
 
-code{
-	background-color: lightgrey;
-	display: block;
-	padding: 5px;
-	border: 1px solid #999;
-	border-left: 5px solid #999;
-}
-
-pre{
-	font-family: 'Inconsolata', monospace;
-}
-
-button{
-	cursor: pointer;
-	border-radius: 28px;
-	border: solid gray;
-	border-width: 1px;
-	font-size: 25px;
-	padding: 2px;
-}
-
-.github{
-	width: 50px;
-}
-
+/* Page Header */
 .flex-header{
 	display: -webkit-flex;
 	display: flex;
@@ -63,8 +40,46 @@ button{
 	border-bottom: solid black;
 }
 
-.content{
+/* Navigation Buttons */
+#flex-nav{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
 }
+
+button{
+	cursor: pointer;
+	border-radius: 28px;
+	border: solid gray;
+	border-width: 1px;
+	width: 100px;
+	font-size: 16px;
+	padding: 5px;
+}
+
+/* Github svg */
+#github{
+	width: 50px;
+}
+
+
+/* Code block CSS */
+.codediv{
+ 	border:solid gray;
+	border-width:.1em .1em .1em .3em;
+	padding:.2em .6em;  
+	overflow: auto;
+	width: auto;
+	background: #eee;
+	font-family: 'Inconsolata', monospace;
+	font-size: 13px;
+}
+
+pre{
+	font-family: 'Inconsolata', monospace;
+}
+
 .comment{
 	color: grey;
 }
@@ -82,24 +97,4 @@ button{
 
 .codestring{
 	color: #ef8b32;
-}
-
-.codediv{
- 	border:solid gray;
-	border-width:.1em .1em .1em .3em;
-	padding:.2em .6em;  
-	overflow: auto;
-	width: auto;
-	background: #eee;
-	font-family: 'Inconsolata', monospace;
-	font-size: 13px;
-}
-
-.flex-nav{
-	display: -webkit-flex;
-	display: flex;
-	justify-content: space-between;
-	padding-left: 45%;
-	padding-right: 45%;
-	padding-top: 10px;
 }
