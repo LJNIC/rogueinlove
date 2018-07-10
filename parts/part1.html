@@ -6,7 +6,9 @@
   <title>A Roguelike in LÖVE</title>
   <meta name="For me" content="All me">
   <meta name="Me" content="Me">
-
+  <link rel="stylesheet" href="../styles/atelier-forest-light.css"> 
+  <script src="../highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <link rel="stylesheet" href="../style/stylesheet.css?v=1.0">
 </head>
 
@@ -20,12 +22,12 @@
 	</div>
 
 	<div id=flex-nav>	
-	<a href="../index.html">
-	<button>Previous</button>
-	</a>
-	<a href="part2.html">
-	<button>Next</button>
-	</a>
+		<a href="../index.html">
+			<button>Previous</button>
+		</a>
+		<a href="part2.html">
+			<button>Next</button>
+		</a>
 	</div>
 
 	<div class="content">
@@ -45,27 +47,16 @@
 	lib. If you haven't already, open up a file in your text editor of choice and call it "main.lua". This is where all LOVE games
 	begin. Our code will start off like this:
 	</p>
-	<div class="codediv"><table><tr><td><pre style="margin: 0; line-height: 125%">1
-2
-3
-4
-5
-6
-7
-8
-9
-10</pre></td><td><pre style="margin: 0; line-height: 125%">ROT <span style="color: #333333">=</span> <span style="color: #007020">require</span> <span class="codestring">&quot;lib/src/rot&quot;</span>
+	<pre><code class="lua">ROT = require "lib/src/rot"
 SCREEN_H = 45
 SCREEN_W = 75
-FORE_COLOR = ROT.Color.fromString(<span class="codestring">&quot;white&quot;</span>)
-BACK_COLOR = ROT.Color.fromString(<span class="codestring">&quot;black&quot;</span>)
+FORE_COLOR = ROT.Color.fromString("white")
+BACK_COLOR = ROT.Color.fromString("black")
 
-<span class="codegreen">function</span> <span class="codepink">love</span>.<span class="codeblue">load</span>()
-<span class="comment">    --rotLove's display object accepts an integer width, height, a float scale, and a LOVE color for foreground and background</span>
-    display <span style="color: #333333">=</span> ROT.Display:new(SCREEN_W, SCREEN_H, 1, FORE_COLOR, BACK_COLOR)
-<span class="codegreen">end</span>
-</pre></td></tr></table></div>
-
+function love.load()
+    --rotLove's display object accepts an integer width, height, a float scale, and a LOVE color for foreground and background
+    display = ROT.Display:new(SCREEN_W, SCREEN_H, 1, FORE_COLOR, BACK_COLOR)
+end</code></pre>
 <p> We start by loading the rotLove module into our game. Then we create constants for the screen height and width 
 	(in tiles, not pixels), and the foreground and background. rotLove's color module can also create colors from a
 	hex code ('#ffffff').
@@ -74,5 +65,13 @@ BACK_COLOR = ROT.Color.fromString(<span class="codestring">&quot;black&quot;</sp
 	we won't be modifying it. See <a href="https://love2d.org/wiki/love.run">here</a> if you're interested. Finally,
 	we create a display object.
 </p>
+	</div>
+	<div id=flex-nav>	
+		<a href="../index.html">
+			<button>Previous</button>
+		</a>
+		<a href="part2.html">
+			<button>Next</button>
+		</a>
 	</div>
 </body>
