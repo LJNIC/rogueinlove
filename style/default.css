@@ -1,6 +1,6 @@
 /*
 
- highlight.js style for Microtik RouterOS script
+Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 */
 
@@ -10,6 +10,7 @@
   padding: 0.5em;
   background: #F0F0F0;
 }
+
 
 /* Base color: saturation 0; */
 
@@ -23,6 +24,7 @@
 }
 
 .hljs-keyword,
+.hljs-attribute,
 .hljs-selector-tag,
 .hljs-meta-keyword,
 .hljs-doctag,
@@ -30,22 +32,13 @@
   font-weight: bold;
 }
 
-.hljs-attribute {
-  color: #0E9A00;
-}    
-
-.hljs-function {
-  color: #99069A;
-}
-
-.hljs-builtin-name {
-  color: #99069A;
-}
 
 /* User color: hue: 0 */
+.hljs-string{
+  color: #ef8b32;
+}
 
 .hljs-type,
-.hljs-string,
 .hljs-number,
 .hljs-selector-id,
 .hljs-selector-class,
@@ -82,7 +75,7 @@
 .hljs-bullet,
 .hljs-code,
 .hljs-addition {
-  color: #0C9A9A;
+  color: #397300;
 }
 
 
