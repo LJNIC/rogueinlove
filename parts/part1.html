@@ -10,12 +10,12 @@
       <script src="../js/highlight.pack.js"></script>
       <script>hljs.initHighlightingOnLoad();</script>
       <link rel="stylesheet" href="../style/stylesheet.css?v=1.0">
-  	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Inconsolata|Roboto+Slab" rel="stylesheet">
+  	<link href="https://fonts.googleapis.com/css?family=Noto+Sans|Inconsolata|Roboto+Slab|Short+Stack" rel="stylesheet">
    </head>
    <body>
       <div class=flex-header>
          <div>
-            <h1>A Roguelike in <span class="codepink">LÖVE</span></h1>
+            <h1>A Roguelike in <span class="love">LÖVE</span></h1>
             <h3>Part 1: The hero emerges</h3>
          </div>
          <a href='https://github.com/LJNIC/roguelovetut'>
@@ -34,7 +34,7 @@
       </div>
       <div class="content">
          <h2> Setting up </h2>
-         <p> First: Getting LOVE installed. There is a guide for that at <a href="https://love2d.org">its wiki</a>.
+         <p> First: Getting LÖVE installed. There is a guide for that at <a href="https://love2d.org">its wiki</a>.
             Once you've got it working, create a directory for your game. Follow the wiki's "Making a Game" section and 
             make sure it prints to the screen properly. Next, we will be using the fantastic 
             <a href="https://github.com/paulofmandown/rotLove"> rotLove</a> library for 
@@ -44,7 +44,7 @@
          </p>
          <pre><code>git clone https://github.com/LJNIC/rotLove.git</code></pre>
          <p> Make a subdirectory in your game directory called something like "lib". Take the "src" from rotLove and stick it in
-            lib. If you haven't already, open up a file in your text editor of choice and call it "main.lua". This is where all LOVE games
+            lib. If you haven't already, open up a file in your text editor of choice and call it "main.lua". This is where all LÖVE games
             begin. 
          </p>
          <h2> Drawing </h2>
@@ -68,12 +68,13 @@ end</code></pre>
             (in tiles, not pixels), and the foreground and background. rotLove's color module can also create colors from a
             hex code ('#ffffff').
             The function <span class="codepink">love</span>.<span class="codeblue">load</span> is the first 
-            function called by LOVE, besides <span class="codepink">love</span>.<span class="codeblue">run</span>, but
+            function called by LÖVE, besides <span class="codepink">love</span>.<span class="codeblue">run</span>, but
             we won't be modifying it. See <a href="https://love2d.org/wiki/love.run">here</a> if you're interested. rotLove's
             display object will serve as the display as our game. It abstracts away splitting the screen into identically sized
-            tiles. It has methods for writing to specific tiles, one of which we use to draw an @ character in the center of the screen. 
+            tiles and has methods for writing to specific tiles, one of which we use to draw an @ character in the center of the screen. 
+			An important detail to note: the display's write methods don't print to the screen--only its draw method does.
          </p>
-         <p> Lastly, we define another LOVE function: <span class="codepink">love</span>.<span class="codeblue">draw</span>. This function 
+         <p> Lastly, we define another LÖVE function: <span class="codepink">love</span>.<span class="codeblue">draw</span>. This function 
             is called every frame to draw to the screen. Our display provides a method to draw itself to the screen, which we call. 
             After running this, you should see an @ character in the center of the game window. If you wish to use a different tileset, such as
             the ones found at the <a href=http://dwarffortresswiki.org/Tileset_repository>Dwarf Fortress tileset repository</a> then you will have to include the following code:
@@ -84,6 +85,43 @@ display = ROT.Display:new(SCREEN_W, SCREEN_H, 1, FORE_COLOR, BACK_COLOR, nil, ti
          <p class="tip"> *See <a href=https://love2d.org/wiki/love.window.setMode>here</a> for more.</p>
       <h2> Movement </h2>
       <p>	The next bit of code: </p>
+	     <pre><code class="lua">...
+    player = {x = SCREEN_W/2, y = SCREEN_H/2}
+--Replace our call to display:writeCenter() with this
+    display:write('@', player.x, player.y)
+end
+
+function love.update(dt)
+    display:write('@', player.x, player.y)
+end</pre></code>
+	  <p> This introduces another LOVE callback: <span class="codepink">love</span>.<span class="codeblue">update</span>. This one gets
+		  called every frame, with the time between the last frame and now as a the parameter dt. Since our game is turn based, we will
+		  not really be using it. The last function we'll be adding in this section is
+		  <span class="codepink">love</span>.<span class="codeblue">keypressed</span>:
+	  </p>
+	     <pre><code class="lua">function love.load()
+...
+--So that you can hold down a key to move
+    love.keyboard.setKeyRepeat(true)
+end
+
+function love.keypressed(key)
+    if key == "up" then
+        player.y = player.y - 1
+    elseif key == "right" then
+        player.x = player.x + 1
+    elseif key == "down" then
+        player.y = player.y + 1
+    elseif key == "left" then
+        player.x == player.x - 1
+    end
+end
+
+function love.update(dt)
+--This will clear the previous player character
+    display:clear()
+    display:write('@', player.x, player.y)
+end</code></pre>	
       </div>
       <div id=flex-nav>	
          <a href="../index.html">
