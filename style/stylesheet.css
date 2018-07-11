@@ -1,13 +1,24 @@
 /* Global Style */
 html{
-	background-color: #18121E;
+	background-color: #154360;
+	height: 100%;
 }
 
 body{
+	margin: 20px;
 	background-color: #eaf1f9;
 	border-radius: 20px;
 	padding: 15px;
 	border: solid white;
+	min-height: 90%;
+}
+
+img{
+	margin-left: 20px;
+	height: auto;
+	max-width: 100%;
+	border: solid gray;
+	border-radius: 15px;
 }
 
 a{
@@ -15,23 +26,46 @@ a{
 }
 
 p{
-	margin-top: 0;
+	margin-top: 10px;
 }
 
 h1{
 	margin: 0;
 	color:  #154360;
-	font-family: arial;
+	font-family: 'menlo';
 }
 
 h2{
 	margin-bottom: 5px;
 	margin-top: 0; 
+	font-family: 'Roboto Slab';
 }
 
 h3{
 	margin: 0;
+	font-family: 'Roboto Slab', serif;
 }
+
+/* List Styles */
+li{
+	list-style: none;
+}
+
+.sub:before{
+	color: #154360;
+}
+
+li:before{
+	content: "♥";
+	margin-right: 5px;
+	color: #BB0066; 
+}
+
+li.b:before{
+	color: #154360;
+}
+
+
 
 .tip{
 	margin-top: 2px;
@@ -40,7 +74,7 @@ h3{
 
 .content{
 	margin-top: 0;
-	font-family: 'Calibri';
+	font-family: 'Noto Sans';
 	font-size: 16px;
 }
 
@@ -52,11 +86,25 @@ h3{
 	border-bottom: solid black;
 }
 
+.flex-list{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	margin-right: 20px;
+}
+
+.love{
+	font-family: 'Short Stack';
+	font-size: 35px;
+	color: #BB0066; 
+}
+
 /* Github svg */
 #github{
 	width: 50px;
 	transition: all 0.3s;
 	transform-origin: 50% 50%;
+	border: none;
 }
 
 #github:hover{
@@ -83,6 +131,7 @@ button{
 	transition-duration: 0.3s;
 	color: white;
 	background: #154360;
+	font-family: 'Noto Sans';
 }
 
 button:hover{
