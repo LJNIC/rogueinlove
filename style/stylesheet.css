@@ -16,7 +16,6 @@ body{
 img{
 	margin-left: 1%;
 	height: auto;
-	max-width: 20%;
 	border: solid gray;
 	border-radius: 2%;
 }
@@ -82,6 +81,7 @@ li.b:before{
 .flex-list{
 	display: -webkit-flex;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 }
 
