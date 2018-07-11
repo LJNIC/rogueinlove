@@ -5,20 +5,20 @@ html{
 }
 
 body{
-	margin: 20px;
+	margin: 1%;
 	background-color: #eaf1f9;
-	border-radius: 20px;
-	padding: 15px;
+	border-radius: 2%;
+	padding: 1%;
 	border: solid white;
 	min-height: 90%;
 }
 
 img{
-	margin-left: 20px;
+	margin-left: 1%;
 	height: auto;
-	max-width: 100%;
+	max-width: 20%;
 	border: solid gray;
-	border-radius: 15px;
+	border-radius: 2%;
 }
 
 a{
@@ -26,7 +26,7 @@ a{
 }
 
 p{
-	margin-top: 10px;
+	margin-top: 1%;
 }
 
 h1{
@@ -36,7 +36,7 @@ h1{
 }
 
 h2{
-	margin-bottom: 5px;
+	margin-bottom: 1%;
 	margin-top: 0; 
 	font-family: 'Roboto Slab';
 }
@@ -57,19 +57,12 @@ li{
 
 li:before{
 	content: "♥";
-	margin-right: 5px;
+	margin-right: 0;
 	color: #BB0066; 
 }
 
 li.b:before{
 	color: #154360;
-}
-
-
-
-.tip{
-	margin-top: 2px;
-	padding: 0;
 }
 
 .content{
@@ -90,7 +83,6 @@ li.b:before{
 	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
-	margin-right: 20px;
 }
 
 .love{
@@ -105,6 +97,7 @@ li.b:before{
 	transition: all 0.3s;
 	transform-origin: 50% 50%;
 	border: none;
+	max-width: 100%;
 }
 
 #github:hover{
@@ -116,7 +109,7 @@ li.b:before{
 	display: -webkit-flex;
 	display: flex;
 	justify-content: center;
-	padding-top: 10px;
+	padding-top: 0.5%;
 }
 
 button{
