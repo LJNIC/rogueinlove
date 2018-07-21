@@ -122,6 +122,11 @@ function love.update(dt)
     display:clear()
     display:write('@', player.x, player.y)
 end</code></pre>	
+	  	   <p> <span class="codepink">love</span>.<span class="codeblue">keypressed</span> is called whenever 
+		   	   a key is pressed. It accepts the key, scancode, and whether or not the key was a repeating keypress, but
+			   we only need the key. See <a href="https://love2d.org/wiki/love.keypressed">here</a> for more. When
+			   the player presses one of the arrow keys, the player's x and y are changed accordingly.
+		   </p>
       </div>
       <div id=flex-nav>	
          <a href="../index.html">

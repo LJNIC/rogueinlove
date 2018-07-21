@@ -32,7 +32,8 @@ p{
 h1{
 	margin: 0;
 	color:  #154360;
-	font-family: 'menlo';
+	font-family: 'Inconsolata';
+	font-size: 230%;
 }
 
 h2{
@@ -91,7 +92,7 @@ li.b:before{
 	display: -webkit-flex;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 }
 
 .love{
